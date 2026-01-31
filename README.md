@@ -188,7 +188,7 @@ The following environment variables are configured securely in the Render dashbo
 
 ```env
 PORT=5000
-MONGO_URI=<MongoDB Atlas Connection String>
+MONGO_URI
 ```
 
 Sensitive information such as database credentials is not committed to the repository.
@@ -235,9 +235,6 @@ Example endpoints:
 
 - The free Render tier may experience **cold-start delays**, which is expected behavior.
 - This backend is designed as an **API-only service** and does not serve frontend pages.
-
----
-
 
 ---
 
