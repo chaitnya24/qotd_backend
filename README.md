@@ -156,6 +156,89 @@ The server will start at:
 http://localhost:5000
 ```
 
+## 🌐 Deployment
+
+The QOTD Backend is deployed on **Render** as a Node.js web service and uses **MongoDB Atlas** for persistent data storage.
+
+---
+
+### 🚀 Live Deployment
+
+**Base URL:**
+```
+https://qotd-backend-pxd0.onrender.com
+```
+
+All APIs are accessible using this base URL and can be tested via Postman, Thunder Client, or any REST client.
+
+---
+
+### 🛠 Deployment Platform
+
+- **Hosting:** Render  
+- **Runtime:** Node.js  
+- **Database:** MongoDB Atlas  
+- **CI/CD:** Automatic deployment on every push to the `main` branch  
+
+---
+
+### 🔐 Environment Variables
+
+The following environment variables are configured securely in the Render dashboard:
+
+```env
+PORT=5000
+MONGO_URI=<MongoDB Atlas Connection String>
+```
+
+Sensitive information such as database credentials is not committed to the repository.
+
+---
+
+### ⚙️ Deployment Flow
+
+1. Code is pushed to GitHub.
+2. Render automatically pulls the latest code from the `main` branch.
+3. Dependencies are installed using `npm install`.
+4. The application starts using `node server.js`.
+5. The backend connects to MongoDB Atlas using environment variables.
+
+---
+
+### 🧪 Testing the Deployment
+
+Example endpoints:
+
+- Health check  
+  ```
+  GET /
+  ```
+
+- Fetch today’s question  
+  ```
+  GET /api/qotd/today
+  ```
+
+- Submit an answer  
+  ```
+  POST /api/qotd/submit
+  ```
+
+- View statistics  
+  ```
+  GET /api/qotd/stats
+  ```
+
+---
+
+### 📌 Notes
+
+- The free Render tier may experience **cold-start delays**, which is expected behavior.
+- This backend is designed as an **API-only service** and does not serve frontend pages.
+
+---
+
+
 ---
 
 ## 🚀 What I Would Improve With More Time
